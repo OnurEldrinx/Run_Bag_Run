@@ -106,6 +106,15 @@ public class HitDetection : MonoBehaviour
                 
             }
 
+        }else if(other.tag.Equals("Obstacle"))
+        {
+
+            if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.puncher))
+            {
+
+                playerHolder.transform.GetChild(0).DOMoveX(other.transform.position.x + 3,0.25f).SetEase(Ease.Flash);
+            }
+
         }
     }
 }
