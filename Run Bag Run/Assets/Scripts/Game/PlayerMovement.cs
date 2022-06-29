@@ -34,11 +34,20 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
+        if(LevelManager.Instance.isLevelFailed || LevelManager.Instance.isLevelSucceed)
+        {
+
+            forwardSpeed = 0;
+            slideSpeed = 0;
+
+        }
+
+
         if (Input.GetMouseButtonDown(0) && !LevelManager.Instance.isLevelStarted)
         {
 
             LevelManager.Instance.isLevelStarted = true;
-            UIComponentManager.Instance.tapToPlayText.gameObject.SetActive(false);
+            UIManager.Instance.waitUI.SetActive(false);
 
         }
 

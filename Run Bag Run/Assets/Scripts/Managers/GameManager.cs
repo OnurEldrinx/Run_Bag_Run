@@ -30,8 +30,9 @@ public class GameManager : Singleton<GameManager>
         if (timeLeft < 0)
         {
             //GameOver();
-            Debug.Log("Game Over");
             LevelManager.Instance.isLevelFailed = true;
+            UIManager.Instance.timeFailUI.SetActive(true);
+            
         }
 
     }
@@ -42,6 +43,26 @@ public class GameManager : Singleton<GameManager>
 
 
     }
+
+    public void WinState()
+    {
+
+        LevelManager.Instance.isLevelSucceed = true;
+        Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Dance", true);
+        StartCoroutine(UIManager.Instance.OpenUI(UIManager.Instance.winUI));
+
+    }
+
+    public void FailState()
+    {
+
+        LevelManager.Instance.isLevelFailed = true;
+        Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Fail", true);
+        StartCoroutine(UIManager.Instance.OpenUI(UIManager.Instance.failUI));
+
+
+    }
+
 
     public void NextLevel()
     {

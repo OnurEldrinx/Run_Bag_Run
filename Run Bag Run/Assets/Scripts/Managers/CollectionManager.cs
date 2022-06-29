@@ -38,9 +38,9 @@ public class CollectionManager : Singleton<CollectionManager>
         collectedType2s = new List<GameObject>();
         collectedType3s = new List<GameObject>();
 
-        Collectable1Target = Random.Range(2, 5);
-        Collectable2Target = Random.Range(2, 5);
-        Collectable3Target = Random.Range(2, 5);
+        Collectable1Target = Random.Range(2, 4);
+        Collectable2Target = Random.Range(2, 4);
+        Collectable3Target = Random.Range(2, 4);
 
         collectable1TargetInitial = Collectable1Target;
         collectable2TargetInitial = Collectable2Target;

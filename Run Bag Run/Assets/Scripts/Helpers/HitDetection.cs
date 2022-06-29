@@ -24,6 +24,8 @@ public class HitDetection : MonoBehaviour
     void Update()
     {
         
+        
+
     }
 
     private void resetBagScale()
@@ -146,15 +148,21 @@ public class HitDetection : MonoBehaviour
                 if (!LevelManager.Instance.isLevelFailed && CollectionManager.Instance.isAllCollected)
                 {
 
+                    /*
                     LevelManager.Instance.isLevelSucceed = true;
                     Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Dance", true);
+                    StartCoroutine(UIManager.Instance.OpenUI(UIManager.Instance.winUI));*/
+
+                    GameManager.Instance.WinState();
 
                 }
                 else
                 {
-
+                    /*
                     LevelManager.Instance.isLevelFailed = true;
-                    Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Fail", true);
+                    Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Fail", true);*/
+
+                    GameManager.Instance.FailState();
 
                 }
 
@@ -163,21 +171,7 @@ public class HitDetection : MonoBehaviour
 
             });
 
-            /*
-            if (!LevelManager.Instance.isLevelFailed && CollectionManager.Instance.isAllCollected)
-            {
-
-                LevelManager.Instance.isLevelSucceed = true;
-                Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Dance", true);
-
-            }
-            else
-            {
-
-                LevelManager.Instance.isLevelFailed = true;
-                Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Fail", true);
-
-            }*/
+            
 
 
 

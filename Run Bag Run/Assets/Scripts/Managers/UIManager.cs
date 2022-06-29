@@ -21,4 +21,12 @@ public class UIManager : Singleton<UIManager>
     {
         
     }
+
+    public IEnumerator OpenUI(GameObject uý)
+    {
+
+        yield return new WaitForSeconds(3);
+        uý.SetActive(true);
+
+    }
 }
