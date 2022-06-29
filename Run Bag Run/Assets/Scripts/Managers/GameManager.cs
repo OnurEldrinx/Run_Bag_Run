@@ -20,7 +20,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
 
-        if (LevelManager.Instance.isLevelStarted)
+        if (LevelManager.Instance.isLevelStarted && !LevelManager.Instance.isLevelFailed && !LevelManager.Instance.isLevelSucceed)
         {
 
             timeLeft -= Time.deltaTime;
@@ -31,7 +31,30 @@ public class GameManager : Singleton<GameManager>
         {
             //GameOver();
             Debug.Log("Game Over");
+            LevelManager.Instance.isLevelFailed = true;
         }
 
     }
+
+    public void GameOver()
+    {
+
+
+
+    }
+
+    public void NextLevel()
+    {
+
+
+
+    }
+
+    public void RestartLevel()
+    {
+
+
+
+    }
+
 }

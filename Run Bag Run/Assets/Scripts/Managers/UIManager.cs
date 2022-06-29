@@ -5,6 +5,12 @@ using UnityEngine;
 public class UIManager : Singleton<UIManager>
 {
     // Start is called before the first frame update
+
+    public GameObject waitUI;
+    public GameObject inGameUI;
+    public GameObject winUI;
+    public GameObject failUI;
+    public GameObject timeFailUI;
     void Start()
     {
         

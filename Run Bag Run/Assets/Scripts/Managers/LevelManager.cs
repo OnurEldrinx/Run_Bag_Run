@@ -6,7 +6,8 @@ public class LevelManager : Singleton<LevelManager>
 {
 
     public bool isLevelStarted;
-
+    public bool isLevelFailed;
+    public bool isLevelSucceed;
 
     // Start is called before the first frame update
     void Start()

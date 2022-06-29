@@ -11,11 +11,13 @@ public class HitDetection : MonoBehaviour
 
     public GameObject playerHolder;
     private float speedLoss;
+    private Vector3 initialScale;
 
     // Start is called before the first frame update
     void Start()
     {
         speedLoss = 0.5f;
+        initialScale = playerHolder.transform.GetChild(0).transform.localScale;
     }
 
     // Update is called once per frame
@@ -24,14 +26,23 @@ public class HitDetection : MonoBehaviour
         
     }
 
+    private void resetBagScale()
+    {
+
+        playerHolder.transform.GetChild(0).transform.localScale = initialScale;
+
+
+    }
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("Collectable"))
         {
 
             other.gameObject.SetActive(false);
-            transform.parent.DOShakeScale(1.5f, 0.75f);
-
+            transform.parent.DOShakeScale(1.5f, 0.75f).OnComplete(() => resetBagScale());
+            
             switch (other.gameObject.GetComponent<Collectable>().type)
             {
                 
@@ -112,8 +123,63 @@ public class HitDetection : MonoBehaviour
             if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.puncher))
             {
 
-                playerHolder.transform.GetChild(0).DOMoveX(other.transform.position.x + 3,0.25f).SetEase(Ease.Flash);
+                playerHolder.transform.GetChild(0).DOMoveX(-other.transform.parent.transform.position.x / 2 , 0.25f).SetEase(Ease.Flash);
+                playerHolder.transform.GetChild(0).DOShakeScale(1.5f,0.75f).OnComplete(() => resetBagScale());
+
             }
+
+        }else if (other.tag.Equals("Finish"))
+        {
+
+            playerHolder.GetComponent<PlayerMovement>().forwardSpeed = 0;
+            playerHolder.GetComponent<PlayerMovement>().slideSpeed = 0;
+
+            UIManager.Instance.inGameUI.SetActive(false);
+
+            Finish.Instance.finishCam.SetActive(true);
+
+            playerHolder.transform.DOJump(Finish.Instance.bagPosition.position, 3, 1, 1.5f).OnComplete(() => {
+
+
+                
+
+                if (!LevelManager.Instance.isLevelFailed && CollectionManager.Instance.isAllCollected)
+                {
+
+                    LevelManager.Instance.isLevelSucceed = true;
+                    Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Dance", true);
+
+                }
+                else
+                {
+
+                    LevelManager.Instance.isLevelFailed = true;
+                    Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Fail", true);
+
+                }
+
+
+
+
+            });
+
+            /*
+            if (!LevelManager.Instance.isLevelFailed && CollectionManager.Instance.isAllCollected)
+            {
+
+                LevelManager.Instance.isLevelSucceed = true;
+                Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Dance", true);
+
+            }
+            else
+            {
+
+                LevelManager.Instance.isLevelFailed = true;
+                Finish.Instance.finishChar.GetComponent<Animator>().SetBool("Fail", true);
+
+            }*/
+
+
 
         }
     }

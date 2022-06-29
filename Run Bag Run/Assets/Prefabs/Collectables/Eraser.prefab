@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  waitForJumpSeconds: 1.5

@@ -23,6 +23,8 @@ public class CollectionManager : Singleton<CollectionManager>
     private int extra2s;
     private int extra3s;
 
+    public bool isAllCollected;
+
     public int Collectable1Target { get => collectable1Target; set => collectable1Target = value; }
     public int Collectable2Target { get => collectable2Target; set => collectable2Target = value; }
     public int Collectable3Target { get => collectable3Target; set => collectable3Target = value; }
@@ -121,7 +123,12 @@ public class CollectionManager : Singleton<CollectionManager>
 
         }
 
+        if (collectedType1s.Count >= collectable1TargetInitial && collectedType2s.Count >= collectable2TargetInitial && collectedType3s.Count >= collectable3TargetInitial)
+        {
 
+            isAllCollected = true;
+
+        }
 
     }
 }
