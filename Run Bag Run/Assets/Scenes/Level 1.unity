@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHolder: {fileID: 2081254695}
+  shakeScalePower: 0.75
 --- !u!54 &116140100
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class HitDetection : MonoBehaviour
     public GameObject playerHolder;
     private float speedLoss;
     private Vector3 initialScale;
+    public float shakeScalePower;
 
     // Start is called before the first frame update
     void Start()
@@ -43,12 +44,13 @@ public class HitDetection : MonoBehaviour
         {
 
             other.gameObject.SetActive(false);
-            transform.parent.DOShakeScale(1.5f, 0.75f).OnComplete(() => resetBagScale());
+            transform.parent.DOShakeScale(1.5f, shakeScalePower).OnComplete(() => resetBagScale());
             
             switch (other.gameObject.GetComponent<Collectable>().type)
             {
                 
                 case Collectable.CollectableType.Eraser:
+                case Collectable.CollectableType.OxygenTank:
 
                     CollectionManager.Instance.Collectable1Target--;
 
@@ -72,6 +74,7 @@ public class HitDetection : MonoBehaviour
                     break;
 
                 case Collectable.CollectableType.Book:
+                case Collectable.CollectableType.AstroHelmet:
 
                     CollectionManager.Instance.Collectable2Target--;
 
@@ -95,6 +98,7 @@ public class HitDetection : MonoBehaviour
                     break;
 
                 case Collectable.CollectableType.Pencil:
+                case Collectable.CollectableType.Powercell:
 
                     CollectionManager.Instance.Collectable3Target--;
 
@@ -126,7 +130,7 @@ public class HitDetection : MonoBehaviour
             {
 
                 playerHolder.transform.GetChild(0).DOMoveX(-other.transform.parent.transform.position.x / 2 , 0.25f).SetEase(Ease.Flash);
-                playerHolder.transform.GetChild(0).DOShakeScale(1.5f,0.75f).OnComplete(() => resetBagScale());
+                playerHolder.transform.GetChild(0).DOShakeScale(1.5f,shakeScalePower).OnComplete(() => resetBagScale());
 
             }else if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.fixedObstacle))
             {
