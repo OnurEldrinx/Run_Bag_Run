@@ -128,10 +128,17 @@ public class HitDetection : MonoBehaviour
                 playerHolder.transform.GetChild(0).DOMoveX(-other.transform.parent.transform.position.x / 2 , 0.25f).SetEase(Ease.Flash);
                 playerHolder.transform.GetChild(0).DOShakeScale(1.5f,0.75f).OnComplete(() => resetBagScale());
 
+            }else if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.fixedObstacle))
+            {
+
+                playerHolder.transform.DOMoveZ(playerHolder.transform.position.z - 3, 0.5f).SetEase(Ease.OutFlash);
+
             }
 
         }else if (other.tag.Equals("Finish"))
         {
+
+            other.GetComponent<BoxCollider>().enabled = false;
 
             playerHolder.GetComponent<PlayerMovement>().forwardSpeed = 0;
             playerHolder.GetComponent<PlayerMovement>().slideSpeed = 0;
@@ -140,10 +147,9 @@ public class HitDetection : MonoBehaviour
 
             Finish.Instance.finishCam.SetActive(true);
 
-            playerHolder.transform.DOJump(Finish.Instance.bagPosition.position, 3, 1, 1.5f).OnComplete(() => {
+            playerHolder.transform.GetChild(0).transform.DOJump(Finish.Instance.bagPosition.position,2,4,2f).SetEase(Ease.InOutSine).OnComplete(() => {
 
 
-                
 
                 if (!LevelManager.Instance.isLevelFailed && CollectionManager.Instance.isAllCollected)
                 {
@@ -169,7 +175,7 @@ public class HitDetection : MonoBehaviour
 
 
 
-            });
+           });
 
             
 

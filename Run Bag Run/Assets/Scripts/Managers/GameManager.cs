@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -31,6 +33,7 @@ public class GameManager : Singleton<GameManager>
         {
             //GameOver();
             LevelManager.Instance.isLevelFailed = true;
+            UIManager.Instance.inGameUI.SetActive(false);
             UIManager.Instance.timeFailUI.SetActive(true);
             
         }
@@ -67,14 +70,16 @@ public class GameManager : Singleton<GameManager>
     public void NextLevel()
     {
 
-
+        DOTween.Clear(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
     public void RestartLevel()
     {
 
-
+        DOTween.Clear(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 

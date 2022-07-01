@@ -10,7 +10,8 @@ public class Obstacle : MonoBehaviour
     public enum OBSTACLE_TYPES
     {
 
-        puncher
+        puncher,
+        fixedObstacle
 
 
     }

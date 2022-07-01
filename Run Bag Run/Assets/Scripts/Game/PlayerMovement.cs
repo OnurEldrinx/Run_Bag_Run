@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
                 PlayerHolder.transform.position = new Vector3(xPos, PlayerHolder.transform.position.y, PlayerHolder.transform.position.z);
                 Vector3 movement = oldRot * (PlayerHolder.transform.position - oldPos);
 
-                if (PlayerRotateEnabled)
+                if (PlayerRotateEnabled && PlayerHolder != null)
                 {
                     if (PlayerHolder.transform.localPosition.x > _oldPosition)
                     {
