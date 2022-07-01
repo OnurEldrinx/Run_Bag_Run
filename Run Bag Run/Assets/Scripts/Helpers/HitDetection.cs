@@ -137,6 +137,19 @@ public class HitDetection : MonoBehaviour
 
                 playerHolder.transform.DOMoveZ(playerHolder.transform.position.z - 3, 0.5f).SetEase(Ease.OutFlash);
 
+            }else if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.fireMachine))
+            {
+
+                playerHolder.GetComponent<PlayerMovement>().forwardSpeed = 0;
+                playerHolder.GetComponent<PlayerMovement>().slideSpeed = 0;
+                playerHolder.transform.GetChild(0).gameObject.SetActive(false);
+                other.GetComponent<Obstacle>().explosion.Play();
+                other.GetComponent<Obstacle>().moltenMetal.SetActive(true);
+                LevelManager.Instance.isLevelFailed = true;
+                UIManager.Instance.inGameUI.SetActive(false);
+                UIManager.Instance.fireFailUI.SetActive(true);
+
+
             }
 
         }else if (other.tag.Equals("Finish"))

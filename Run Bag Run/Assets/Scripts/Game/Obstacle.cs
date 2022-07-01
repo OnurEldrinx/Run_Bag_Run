@@ -6,12 +6,14 @@ public class Obstacle : MonoBehaviour
 {
 
     public OBSTACLE_TYPES type;
-
+    public GameObject moltenMetal;
+    public ParticleSystem explosion;
     public enum OBSTACLE_TYPES
     {
 
         puncher,
-        fixedObstacle
+        fixedObstacle,
+        fireMachine
 
 
     }

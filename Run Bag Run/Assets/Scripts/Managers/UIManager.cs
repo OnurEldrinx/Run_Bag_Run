@@ -11,6 +11,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject winUI;
     public GameObject failUI;
     public GameObject timeFailUI;
+    public GameObject fireFailUI;
     void Start()
     {
         
