@@ -31,6 +31,9 @@ public class Collectable : MonoBehaviour
         Eraser,
         Pencil,
         Book,
+        OxygenTank,
+        AstroHelmet,
+        Powercell
         
 
     }

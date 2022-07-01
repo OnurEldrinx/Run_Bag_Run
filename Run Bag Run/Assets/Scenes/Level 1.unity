@@ -2773,6 +2773,7 @@ MonoBehaviour:
   collectable2Counter: {fileID: 2061146859}
   collectable3Counter: {fileID: 1601750091}
   timeBarFillImg: {fileID: 1077979248}
+  levelNoText: {fileID: 984055310}
 --- !u!114 &791743568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,7 +3817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 353b4dced0f2d91409d38470c25a69dc, type: 2}
   m_sharedMaterial: {fileID: 7712399958657241390, guid: 353b4dced0f2d91409d38470c25a69dc, type: 2}
@@ -5503,7 +5504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506423220}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0.1, y: 4.8970475, z: 168.58519}
+  m_LocalPosition: {x: 0.1, y: 4.8970475, z: -6.414815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7299,7 +7300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081254695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 175}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2033916177}
@@ -7478,7 +7479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134805159}
   m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: 0.1, y: 4.8970475, z: 168.58519}
+  m_LocalPosition: {x: 0.1, y: 4.8970475, z: -6.414815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 438611018}

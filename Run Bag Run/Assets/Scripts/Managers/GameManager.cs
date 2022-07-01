@@ -13,7 +13,9 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        UIComponentManager.Instance.levelNoText.text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex + 1).ToString();
+
         Application.targetFrameRate = 60;
         timeLeft = levelTime;
     }

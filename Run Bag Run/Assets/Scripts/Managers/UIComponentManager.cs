@@ -18,6 +18,7 @@ public class UIComponentManager : Singleton<UIComponentManager>
     public GameObject collectable2Counter;
     public GameObject collectable3Counter;
     public Image timeBarFillImg;
+    public TextMeshProUGUI levelNoText;
 
     // Start is called before the first frame update
     void Start()
