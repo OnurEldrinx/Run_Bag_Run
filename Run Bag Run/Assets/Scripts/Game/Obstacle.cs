@@ -15,7 +15,8 @@ public class Obstacle : MonoBehaviour
         fixedObstacle,
         fireMachine,
         spinner,
-        barbedObstacle
+        barbedObstacle,
+        movingSaw
 
 
     }

@@ -158,9 +158,21 @@ public class HitDetection : MonoBehaviour
                 UIManager.Instance.fireFailUI.SetActive(true);
 
 
+            }else if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.movingSaw))
+            {
+
+                playerHolder.GetComponent<PlayerMovement>().forwardSpeed = 0;
+                playerHolder.GetComponent<PlayerMovement>().slideSpeed = 0;
+                playerHolder.transform.GetChild(0).gameObject.SetActive(false);
+                other.GetComponent<Obstacle>().explosion.Play();
+                LevelManager.Instance.isLevelFailed = true;
+                UIManager.Instance.inGameUI.SetActive(false);
+                UIManager.Instance.sawFailUI.SetActive(true);
+
             }
 
-        }else if (other.tag.Equals("Finish"))
+        }
+        else if (other.tag.Equals("Finish"))
         {
 
             Finish.Instance.reached = true;
