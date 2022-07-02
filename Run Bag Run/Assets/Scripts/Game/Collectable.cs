@@ -36,7 +36,10 @@ public class Collectable : MonoBehaviour
         Powercell,
         Floatie,
         Sunblock,
-        Towel
+        Towel,
+        Hammer,
+        Handsaw,
+        Wrench
         
 
     }

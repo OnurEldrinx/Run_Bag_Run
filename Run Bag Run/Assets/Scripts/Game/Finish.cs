@@ -8,6 +8,7 @@ public class Finish : Singleton<Finish>
     public GameObject finishChar;
     public Transform bagPosition;
     public GameObject finishCam;
+    public bool reached;
 
     // Start is called before the first frame update
     void Start()

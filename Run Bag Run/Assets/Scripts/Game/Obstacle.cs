@@ -13,7 +13,9 @@ public class Obstacle : MonoBehaviour
 
         puncher,
         fixedObstacle,
-        fireMachine
+        fireMachine,
+        spinner,
+        barbedObstacle
 
 
     }
@@ -27,6 +29,13 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (type.Equals(OBSTACLE_TYPES.spinner))
+        {
+
+            transform.Rotate(Vector3.up, 40 * Time.deltaTime);
+
+        }
+
     }
 }

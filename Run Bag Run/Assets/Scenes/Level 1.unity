@@ -2792,6 +2792,7 @@ MonoBehaviour:
   winUI: {fileID: 1086898868}
   failUI: {fileID: 1776988405}
   timeFailUI: {fileID: 1466298622}
+  fireFailUI: {fileID: 0}
 --- !u!114 &791743569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2820,7 +2821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 0
-  levelTime: 60
+  levelTime: 40
 --- !u!4 &791743571
 Transform:
   m_ObjectHideFlags: 0
@@ -7090,6 +7091,7 @@ MonoBehaviour:
   finishChar: {fileID: 919132148154091199}
   bagPosition: {fileID: 2093833539}
   finishCam: {fileID: 334331191}
+  reached: 0
 --- !u!1 &2033916176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4173418378928887994, guid: 3d76ab4cbe18fd34f81f2a2370793878, type: 3}
@@ -7326,7 +7328,7 @@ MonoBehaviour:
   PlayerRotateEnabled: 1
   RotatationDegree: -25
   RotationSpeed: 0.2
-  forwardSpeed: 5
+  forwardSpeed: 7.5
   slideSpeed: 50
 --- !u!4 &2089284509 stripped
 Transform:

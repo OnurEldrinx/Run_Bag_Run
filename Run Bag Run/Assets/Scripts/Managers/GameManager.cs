@@ -24,7 +24,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
 
-        if (LevelManager.Instance.isLevelStarted && !LevelManager.Instance.isLevelFailed && !LevelManager.Instance.isLevelSucceed)
+        if (LevelManager.Instance.isLevelStarted && !LevelManager.Instance.isLevelFailed && !LevelManager.Instance.isLevelSucceed && !Finish.Instance.reached)
         {
 
             timeLeft -= Time.deltaTime;

@@ -52,6 +52,8 @@ public class HitDetection : MonoBehaviour
                 case Collectable.CollectableType.Eraser:
                 case Collectable.CollectableType.OxygenTank:
                 case Collectable.CollectableType.Floatie:
+                case Collectable.CollectableType.Handsaw:
+
 
                     CollectionManager.Instance.Collectable1Target--;
 
@@ -77,6 +79,7 @@ public class HitDetection : MonoBehaviour
                 case Collectable.CollectableType.Book:
                 case Collectable.CollectableType.AstroHelmet:
                 case Collectable.CollectableType.Sunblock:
+                case Collectable.CollectableType.Wrench:
 
 
                     CollectionManager.Instance.Collectable2Target--;
@@ -103,6 +106,7 @@ public class HitDetection : MonoBehaviour
                 case Collectable.CollectableType.Pencil:
                 case Collectable.CollectableType.Powercell:
                 case Collectable.CollectableType.Towel:
+                case Collectable.CollectableType.Hammer:
 
                     CollectionManager.Instance.Collectable3Target--;
 
@@ -136,7 +140,7 @@ public class HitDetection : MonoBehaviour
                 playerHolder.transform.GetChild(0).DOMoveX(-other.transform.parent.transform.position.x / 2 , 0.25f).SetEase(Ease.Flash);
                 playerHolder.transform.GetChild(0).DOShakeScale(1.5f,shakeScalePower).OnComplete(() => resetBagScale());
 
-            }else if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.fixedObstacle))
+            }else if (other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.fixedObstacle) || other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.spinner) || other.GetComponent<Obstacle>().type.Equals(Obstacle.OBSTACLE_TYPES.barbedObstacle))
             {
 
                 playerHolder.transform.DOMoveZ(playerHolder.transform.position.z - 3, 0.5f).SetEase(Ease.OutFlash);
@@ -158,6 +162,8 @@ public class HitDetection : MonoBehaviour
 
         }else if (other.tag.Equals("Finish"))
         {
+
+            Finish.Instance.reached = true;
 
             other.GetComponent<BoxCollider>().enabled = false;
 
