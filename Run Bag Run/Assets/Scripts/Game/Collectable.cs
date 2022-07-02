@@ -33,7 +33,10 @@ public class Collectable : MonoBehaviour
         Book,
         OxygenTank,
         AstroHelmet,
-        Powercell
+        Powercell,
+        Floatie,
+        Sunblock,
+        Towel
         
 
     }

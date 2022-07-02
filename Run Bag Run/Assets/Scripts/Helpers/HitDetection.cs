@@ -51,6 +51,7 @@ public class HitDetection : MonoBehaviour
                 
                 case Collectable.CollectableType.Eraser:
                 case Collectable.CollectableType.OxygenTank:
+                case Collectable.CollectableType.Floatie:
 
                     CollectionManager.Instance.Collectable1Target--;
 
@@ -75,6 +76,8 @@ public class HitDetection : MonoBehaviour
 
                 case Collectable.CollectableType.Book:
                 case Collectable.CollectableType.AstroHelmet:
+                case Collectable.CollectableType.Sunblock:
+
 
                     CollectionManager.Instance.Collectable2Target--;
 
@@ -99,6 +102,7 @@ public class HitDetection : MonoBehaviour
 
                 case Collectable.CollectableType.Pencil:
                 case Collectable.CollectableType.Powercell:
+                case Collectable.CollectableType.Towel:
 
                     CollectionManager.Instance.Collectable3Target--;
 
