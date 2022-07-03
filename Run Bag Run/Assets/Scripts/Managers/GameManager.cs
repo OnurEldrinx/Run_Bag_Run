@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
 
-        UIComponentManager.Instance.levelNoText.text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex + 1).ToString();
+        UIComponentManager.Instance.levelNoText.text = "LEVEL " + (PlayerPrefs.GetInt("LevelNo") + 1);
 
         Application.targetFrameRate = 60;
         timeLeft = levelTime;
@@ -73,7 +73,27 @@ public class GameManager : Singleton<GameManager>
     {
 
         DOTween.Clear(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        Finish.Instance.finishChar.GetComponent<Animator>().enabled = false;
+
+        LevelManager.Instance.levelNo++;
+        PlayerPrefs.SetInt("LevelNo", LevelManager.Instance.levelNo);
+        PlayerPrefs.Save();
+        
+
+        if((SceneManager.GetActiveScene().buildIndex + 1)%5 == 0)
+        {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+
+        }
+        else
+        {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
+
 
     }
 

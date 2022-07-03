@@ -2522,7 +2522,7 @@ RectTransform:
   - {fileID: 413816861}
   - {fileID: 984055309}
   m_Father: {fileID: 804416631}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2809,6 +2809,7 @@ MonoBehaviour:
   isLevelStarted: 0
   isLevelFailed: 0
   isLevelSucceed: 0
+  levelNo: 1
 --- !u!114 &791743570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2928,11 +2929,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 744665274}
   - {fileID: 1466298623}
   - {fileID: 1776988406}
   - {fileID: 1086898869}
   - {fileID: 1908324307}
-  - {fileID: 744665274}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3863,7 +3864,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -4140,7 +4141,7 @@ RectTransform:
   - {fileID: 913329561}
   - {fileID: 604364112}
   m_Father: {fileID: 804416631}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5383,7 +5384,7 @@ RectTransform:
   - {fileID: 401390451}
   - {fileID: 1159011222}
   m_Father: {fileID: 804416631}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6766,7 +6767,7 @@ RectTransform:
   - {fileID: 1628836352}
   - {fileID: 771139993}
   m_Father: {fileID: 804416631}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6987,7 +6988,7 @@ RectTransform:
   - {fileID: 806979785}
   - {fileID: 1587742071}
   m_Father: {fileID: 804416631}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7007,7 +7008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3622641, g: 0.96665436, b: 1, a: 0}
+  m_Color: {r: 0.3622641, g: 0.96665436, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -39,7 +39,10 @@ public class Collectable : MonoBehaviour
         Towel,
         Hammer,
         Handsaw,
-        Wrench
+        Wrench,
+        Sneakers,
+        Whey,
+        Shaker
         
 
     }

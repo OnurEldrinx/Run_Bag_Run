@@ -53,6 +53,7 @@ public class HitDetection : MonoBehaviour
                 case Collectable.CollectableType.OxygenTank:
                 case Collectable.CollectableType.Floatie:
                 case Collectable.CollectableType.Handsaw:
+                case Collectable.CollectableType.Sneakers:
 
 
                     CollectionManager.Instance.Collectable1Target--;
@@ -80,6 +81,7 @@ public class HitDetection : MonoBehaviour
                 case Collectable.CollectableType.AstroHelmet:
                 case Collectable.CollectableType.Sunblock:
                 case Collectable.CollectableType.Wrench:
+                case Collectable.CollectableType.Whey:
 
 
                     CollectionManager.Instance.Collectable2Target--;
@@ -107,6 +109,7 @@ public class HitDetection : MonoBehaviour
                 case Collectable.CollectableType.Powercell:
                 case Collectable.CollectableType.Towel:
                 case Collectable.CollectableType.Hammer:
+                case Collectable.CollectableType.Shaker:
 
                     CollectionManager.Instance.Collectable3Target--;
 
